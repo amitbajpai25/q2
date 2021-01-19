@@ -7,6 +7,13 @@ source ${HTTPD_CONTAINER_SCRIPTS_PATH}/common.sh
 echo "---> Enabling s2i support in httpd24 image"
 
 config_s2i
+echo "creating new file"
+cp -Rf /tmp/src/*.html ./
+
+echo "new html info page"
+Date=`date "+%Y-%m-%d"`
+echo "Info page built on $Date" >> ./info.html
+echo "additional text">> ./info.html
 
 
 if [ -d ./httpd-cfg ]; then
